@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">PopItUserApp</string>
+
+    <string-array name="prenoms_array">
+        <item>Camille</item>
+        <item>Micheline</item>
+        <item>Claire</item>
+        <item>Quentin</item>
+        <item>Mouloud</item>
+        <item>Fabrice</item>
+        <item>Etienne</item>
+        <item>Sacha</item>
+    </string-array>
 </resources>
