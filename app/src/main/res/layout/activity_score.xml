@@ -34,6 +34,17 @@
             android:layout_height="wrap_content"
             android:layout_weight="20" />
 
+        <Button
+            android:id="@+id/button_exit"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/holo_red_light"
+            android:fontFamily="@font/luckiest_guy"
+            android:text="Fermer"
+            android:textColor="@android:color/background_light"
+            android:textSize="50sp" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

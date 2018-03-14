@@ -11,4 +11,5 @@
         <item>Etienne</item>
         <item>Sacha</item>
     </string-array>
+    <string name="title_activity_pret">PretActivity</string>
 </resources>
