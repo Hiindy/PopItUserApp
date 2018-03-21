@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.gesture.GestureOverlayView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/gestures"
+    android:id="@+id/layout_question"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.binder3u.popituserapp.QuestionActivity"><![CDATA[
-    android:eventsInterceptionEnabled="true"
-    android:gestureStrokeType="multiple"
-    android:orientation="horizontal" >
-
-    ]]>
+    tools:context="com.example.binder3u.popituserapp.QuestionActivity">>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -116,7 +111,6 @@
                     android:id="@+id/pnt4"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_marginStart="42dp"
                     android:contentDescription="@string/app_name"
                     android:src="@drawable/point" />
 
@@ -160,4 +154,4 @@
 
     </LinearLayout>
 
-</android.gesture.GestureOverlayView>
+</android.support.constraint.ConstraintLayout>
