@@ -60,32 +60,32 @@ public class MainActivity extends Activity implements GestureOverlayView.OnGestu
         spinner.setAdapter(spinnerArrayAdapter);
 
         final Button button = findViewById(R.id.button_1);
-
-        button.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Log.i("TAG","Pressed");
-                btn1pressed = true;
-            }
-        });
-
-
 //
-//        button.setOnTouchListener(new View.OnTouchListener() {
+//        button.setOnClickListener(new View.OnClickListener() {
+//
 //            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                switch (event.getAction()) {
-//                    case MotionEvent.ACTION_DOWN:
-//                        btn1pressed = true;
-//                        return true;
-//                    case MotionEvent.ACTION_UP:
-//                        btn1pressed = false;
-//                        return true;
-//                }
-//                return false;
+//            public void onClick(View v) {
+//                Log.i("TAG","Pressed");
+//                btn1pressed = true;
 //            }
 //        });
+
+
+
+        button.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        btn1pressed = true;
+                        return true;
+                    case MotionEvent.ACTION_UP:
+                        btn1pressed = false;
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
     public void passagePret() {

@@ -9,11 +9,20 @@ import android.gesture.GestureOverlayView;
 import android.gesture.Prediction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class QuestionActivity extends Activity implements GestureOverlayView.OnGesturePerformedListener {
     private GestureLibrary mLibrary;
+    private boolean nouvelleQuestion = true;
+    private int numQuestion = 0;
+    private Questionnaire questionnaire;
+    private TextView TVnumQuestion;
+    private TextView TvtotalQuestions;
+    private TextView TVtexteQuestion;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +36,27 @@ public class QuestionActivity extends Activity implements GestureOverlayView.OnG
 
         GestureOverlayView gestures = (GestureOverlayView) findViewById(R.id.gestures);
         gestures.addOnGesturePerformedListener(this);
+
+        questionnaire = new Questionnaire();
+
+        Log.i("TAG", questionnaire.getListeQuestions().get(numQuestion).getTexte());
+
+        TVnumQuestion = findViewById(R.id.textView_num_question);
+        TvtotalQuestions = findViewById(R.id.textView_nb_total_questions);
+        TvtotalQuestions.setText(Integer.toString(questionnaire.getListeQuestions().size()));
+        TVtexteQuestion = findViewById(R.id.textView_texteQuestion);
+
+        nouvelleQuestion(questionnaire.getListeQuestions().get(numQuestion));
+
     }
 
-    public void passageScore(){
+    public void nouvelleQuestion(Question question) {
+        TVnumQuestion.setText(Integer.toString(question.getNumero()));
+        TVtexteQuestion.setText(question.getTexte());
+
+    }
+
+    public void passageScore() {
         Intent intent = new Intent(QuestionActivity.this, ScoreActivity.class);
         startActivity(intent);
     }
@@ -42,7 +69,14 @@ public class QuestionActivity extends Activity implements GestureOverlayView.OnG
             String result = predictions.get(0).name;
 
             if ("doubleSlide".equalsIgnoreCase(result)) {
-                passageScore();
+                if(numQuestion < questionnaire.getListeQuestions().size()-1) {
+                    numQuestion++;
+                    nouvelleQuestion(questionnaire.getListeQuestions().get(numQuestion));
+                }
+                else
+                {
+                    passageScore();
+                }
             }
         }
 
