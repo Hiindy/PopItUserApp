@@ -5,10 +5,12 @@
     android:id="@+id/gestures"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.binder3u.popituserapp.QuestionActivity">
+    tools:context="com.example.binder3u.popituserapp.QuestionActivity"><![CDATA[
     android:eventsInterceptionEnabled="true"
     android:gestureStrokeType="multiple"
     android:orientation="horizontal" >
+
+    ]]>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -70,16 +72,92 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView_texteQuestion"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/luckiest_guy"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView_texteQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/luckiest_guy"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="25sp" />
+
+            <RelativeLayout
+                android:id="@+id/main_zone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/goal"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="15dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/circle" />
+
+                <ImageView
+                    android:id="@+id/pnt5"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="114dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/point" />
+
+                <ImageView
+                    android:id="@+id/pnt4"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="42dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/point" />
+
+                <ImageView
+                    android:id="@+id/pnt3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="false"
+                    android:layout_marginLeft="200dp"
+                    android:layout_marginTop="17dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/point" />
+
+                <ImageView
+                    android:id="@+id/pnt2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="75dp"
+                    android:layout_marginTop="75dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/point" />
+
+                <ImageView
+                    android:id="@+id/pnt1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="false"
+                    android:layout_marginBottom="150dp"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="100dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/point" />
+
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </android.gesture.GestureOverlayView>
